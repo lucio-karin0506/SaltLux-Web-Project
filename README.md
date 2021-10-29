@@ -1,2 +1,2 @@
 # SaltLux-Web-Project
-# 1팀 화이팅~
+## 1팀 화이팅~
