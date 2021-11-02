@@ -9,9 +9,7 @@ CREATE TABLE students (
     student_image BLOB NOT NULL,
     achievement   NUMBER(30)
 );
-
 ALTER TABLE students ADD CONSTRAINT student_id PRIMARY KEY ( student_id );
-
 
 CREATE TABLE problems (
     subject_id      NUMBER(10) NOT NULL,
@@ -21,24 +19,31 @@ CREATE TABLE problems (
     problem_case    VARCHAR2(100) NOT NULL,
     problem_answer  VARCHAR2(100) NOT NULL
 );
-drop table problems;
 ALTER TABLE problems ADD CONSTRAINT problems_pk PRIMARY KEY ( problem_id );
-
 ALTER TABLE problems
     ADD CONSTRAINT problems_students_fk FOREIGN KEY ( student_id )
         REFERENCES students ( student_id );
 
-ALTER TABLE problems
-    ADD CONSTRAINT problems_subjects_fk FOREIGN KEY ( subject_id )
-        REFERENCES subjects ( subject_id );
-        
-drop table student_answer_list;
 CREATE TABLE student_answer_list (
     student_id     NUMBER(30) NOT NULL,
     problem_id     NUMBER(30) NOT NULL,
     student_answer VARCHAR2(100) NOT NULL,
     subject_id     NUMBER(10) NOT NULL
 );
+
+CREATE TABLE student_grade_list (
+    student_id    NUMBER(30) NOT NULL,
+    subject_score NUMBER(30) NOT NULL,
+    subject_id    NUMBER(10) NOT NULL
+);
+CREATE TABLE subjects (
+    subject_id   NUMBER(10) NOT NULL,
+    subject_name VARCHAR2(50)
+);
+
+ALTER TABLE problems
+    ADD CONSTRAINT problems_subjects_fk FOREIGN KEY ( subject_id )
+        REFERENCES subjects ( subject_id );
 
 --  ERROR: FK name length exceeds maximum allowed length(30) 
 ALTER TABLE student_answer_list
@@ -53,12 +58,6 @@ ALTER TABLE student_answer_list
     ADD CONSTRAINT table_12_students_fk FOREIGN KEY ( student_id )
         REFERENCES students ( student_id );
 
-CREATE TABLE student_grade_list (
-    student_id    NUMBER(30) NOT NULL,
-    subject_score NUMBER(30) NOT NULL,
-    subject_id    NUMBER(10) NOT NULL
-);
-
 ALTER TABLE student_grade_list
     ADD CONSTRAINT student_grade_list_subjects_fk FOREIGN KEY ( subject_id )
         REFERENCES subjects ( subject_id );
@@ -67,9 +66,5 @@ ALTER TABLE student_grade_list
     ADD CONSTRAINT table_14_students_fk FOREIGN KEY ( student_id )
         REFERENCES students ( student_id );
         
-CREATE TABLE subjects (
-    subject_id   NUMBER(10) NOT NULL,
-    subject_name VARCHAR2(50)
-);
 
 ALTER TABLE subjects ADD CONSTRAINT subjects_pk PRIMARY KEY ( subject_id );
