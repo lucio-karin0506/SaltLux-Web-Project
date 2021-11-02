@@ -67,10 +67,6 @@ ALTER TABLE student_grade_list
 ALTER TABLE student_grade_list
     ADD CONSTRAINT table_14_students_fk FOREIGN KEY ( student_id )
         REFERENCES students ( student_id );
-        
-
-
-
 
 --admin 테이블
 create table admin (
@@ -78,3 +74,15 @@ create table admin (
     password VARCHAR2(30) NOT NULL
 );
 
+--위에서 차례대로 진행 후 밑의 sql문 실행
+ALTER TABLE problems
+add problem_commmentary varchar2(4000) null;
+ALTER TABLE problems
+modify PROBLEM_CASE null;
+ALTER TABLE subjects
+modify SUBJECT_NAME not null;
+desc problems;
+desc students;
+desc student_answer_list;
+desc student_grade_list;
+desc subjects;
