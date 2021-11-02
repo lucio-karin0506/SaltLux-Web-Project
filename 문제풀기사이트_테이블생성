@@ -81,14 +81,17 @@ ALTER TABLE problems
 modify PROBLEM_CASE null;
 ALTER TABLE subjects
 modify SUBJECT_NAME not null;
-desc problems;
-desc students;
-desc student_answer_list;
-desc student_grade_list;
-desc subjects;
 
 ALTER TABLE students
 modify student_name varchar2(30);
 
 ALTER TABLE problems
 modify (PROBLEM_CONTENT varchar2(4000), PROBLEM_CASE varchar2(4000), PROBLEM_ANSWER varchar2(4000));
+
+--테이블 데이터타입 및 null 유무 확인
+desc problems;
+desc students;
+desc student_answer_list;
+desc student_grade_list;
+desc subjects;
+desc admin;
