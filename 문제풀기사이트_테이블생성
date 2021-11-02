@@ -86,3 +86,6 @@ desc students;
 desc student_answer_list;
 desc student_grade_list;
 desc subjects;
+
+ALTER TABLE students
+modify student_name varchar2(30);
