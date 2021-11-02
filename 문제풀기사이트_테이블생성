@@ -41,6 +41,8 @@ CREATE TABLE subjects (
     subject_name VARCHAR2(50)
 );
 
+ALTER TABLE subjects ADD CONSTRAINT subjects_pk PRIMARY KEY ( subject_id );
+
 ALTER TABLE problems
     ADD CONSTRAINT problems_subjects_fk FOREIGN KEY ( subject_id )
         REFERENCES subjects ( subject_id );
@@ -67,4 +69,3 @@ ALTER TABLE student_grade_list
         REFERENCES students ( student_id );
         
 
-ALTER TABLE subjects ADD CONSTRAINT subjects_pk PRIMARY KEY ( subject_id );
