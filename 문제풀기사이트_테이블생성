@@ -69,3 +69,9 @@ ALTER TABLE student_grade_list
         REFERENCES students ( student_id );
         
 
+--admin 테이블
+create table admin (
+    id VARCHAR2(30) NOT NULL,
+    password VARCHAR2(30) NOT NULL
+);
+
