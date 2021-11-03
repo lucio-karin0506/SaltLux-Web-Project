@@ -95,3 +95,23 @@ desc student_answer_list;
 desc student_grade_list;
 desc subjects;
 desc admin;
+
+---problem_id :sequence
+CREATE SEQUENCE problem_seq
+       INCREMENT BY 1
+       START WITH 1
+       MINVALUE 1
+       MAXVALUE 10000
+       NOCYCLE
+       NOCACHE
+       NOORDER;
+SELECT problem_seq.NEXTVAL
+  FROM dual;
+
+
+
+-----------문제 입출력 프로그램 사용시 아래의 test테이블 사용하세요!!!--------
+
+
+
+
