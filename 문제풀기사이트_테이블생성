@@ -114,9 +114,9 @@ CREATE TABLE problems_test (
     subject_id      NUMBER(10) ,
     student_id      NUMBER(30) ,
     problem_id      NUMBER(30) ,
-    problem_content not null VARCHAR2(4000) ,
+    problem_content  VARCHAR2(4000) not null,
     problem_case    VARCHAR2(4000) ,
-    problem_answer not null VARCHAR2(4000) ,
+    problem_answer  VARCHAR2(4000) not null,
     problem_commentary varchar2(4000)
 );
 
