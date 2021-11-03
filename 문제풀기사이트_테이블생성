@@ -110,7 +110,15 @@ CREATE SEQUENCE problem_seq
 
 
 -----------문제 입출력 프로그램 사용시 아래의 test테이블 사용하세요!!!--------
-
+CREATE TABLE problems (
+    subject_id      NUMBER(10) ,
+    student_id      NUMBER(30) ,
+    problem_id      NUMBER(30) ,
+    problem_content VARCHAR2(4000) ,
+    problem_case    VARCHAR2(4000) ,
+    problem_answer  VARCHAR2(4000) ,
+    problem_commentary varchar2(4000)
+);
 
 
 
