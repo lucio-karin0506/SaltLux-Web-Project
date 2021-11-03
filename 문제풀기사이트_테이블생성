@@ -120,5 +120,8 @@ CREATE TABLE problems_test (
     problem_commentary varchar2(4000)
 );
 
+--답안 입력 사용시 아래의 test테이블 사용하세요!!!
+CREATE TABLE student_answer_test AS
+SELECT * FROM student_answer_list WHERE 1=2;
 
 
