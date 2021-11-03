@@ -18,21 +18,32 @@
 	integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
 	crossorigin="anonymous"></script>
 </head>
-<body style="text-align: center;">
+<body>
+	<div style="width: 70%; float:none; margin:0 auto" >
+		<table class="table m-4">
+			<thead class="thead-dark">
+				<tr>
+					<th scope="col">문제 풀기</th>
+					<th scope="col"><a href="/excel">문제 내기</a></th>
+					<th scope="col">마이페이지</th>
+				</tr>
+			</thead>
+		</table>	
+	</div>
 	<div class="row text-center m-6">
 		<div>
 			<img src='<c:url value="/images/saltlux.png"/>' width="100">
 		</div>
 	</div>
 	<p>
-	<p>파일 업로드 완료</h3>
+	<p><h3>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;파일 업로드 완료</h3><br/>
+
 	<div style="width: 70%; float:none; margin:0 auto">
 	<c:forEach var="problemList" items="${problemList}">
 
 		<table class="table m-4">
 			<thead class="thead-dark">
 				<tr>
-						<th scope="col">번호</th>
 						<th scope="col">문제</th>
 						<th scope="col">보기</th>
 						<th scope="col">답</th>
@@ -40,20 +51,18 @@
 				</tr>
 			</thead>
 			<tbody>
-				<c:forEach var="problemList" items="${problemList}">
+				
 					<tr>
-						<td>${problemList.problemId}</td>
 						<td>${problemList.problemContent}</td>
 						<td>${problemList.problemCase}</td>
 						<td>${problemList.problemAnswer}</td>
 						<td>${problemList.problemCommentary}</td>
 					</tr>
-				</c:forEach>
+	
 			</tbody>
 		</table>	
 		</c:forEach>
 	</div>
-
 
 
 
