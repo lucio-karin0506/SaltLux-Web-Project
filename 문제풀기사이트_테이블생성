@@ -68,11 +68,6 @@ ALTER TABLE student_grade_list
     ADD CONSTRAINT table_14_students_fk FOREIGN KEY ( student_id )
         REFERENCES students ( student_id );
 
---admin 테이블
-create table admin (
-    id VARCHAR2(30) NOT NULL,
-    password VARCHAR2(30) NOT NULL
-);
 
 --위에서 차례대로 진행 후 밑의 sql문 실행
 ALTER TABLE problems
@@ -106,7 +101,8 @@ CREATE SEQUENCE problem_seq
        NOCACHE
        NOORDER;
 
-
+--admin 계정 
+alter table students modify student_image null;
 
 
 -----------문제 입출력 프로그램 사용시 아래의 test테이블 사용하세요!!!--------
