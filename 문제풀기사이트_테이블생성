@@ -105,8 +105,7 @@ CREATE SEQUENCE problem_seq
        NOCYCLE
        NOCACHE
        NOORDER;
-SELECT problem_seq.NEXTVAL
-  FROM dual;
+
 
 
 
