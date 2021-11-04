@@ -120,4 +120,6 @@ CREATE TABLE problems_test (
 CREATE TABLE student_answer_test AS
 SELECT * FROM student_answer_list WHERE 1=2;
 
+--students 테이블 사용시 이미지 컬럼 null 변경
+alter table students modify student_image null;
 
