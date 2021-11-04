@@ -123,3 +123,7 @@ SELECT * FROM student_answer_list WHERE 1=2;
 --students 테이블 사용시 이미지 컬럼 null 변경
 alter table students modify student_image null;
 
+--로그인 테이블 잠시 생성해봄
+create table login (
+    email_id VARCHAR2(100) not null ,
+    PASSWORD VARCHAR2(30) not null );
