@@ -185,3 +185,7 @@ alter table student_grade_list drop constraint table_14_students_fk;
 -- 2. 외래키 제약조건 재설정
 alter table student_grade_list add foreign key(student_id) references students(student_id)
 on delete cascade;
+
+--코멘터리 M지우기
+alter table problems
+rename column PROBLEM_COMMMENTARY to PROBLEM_COMMENTARY;
