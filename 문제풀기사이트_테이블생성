@@ -71,7 +71,7 @@ ALTER TABLE student_grade_list
 
 --위에서 차례대로 진행 후 밑의 sql문 실행
 ALTER TABLE problems
-add problem_commmentary varchar2(4000) null;
+add problem_commentary varchar2(4000) null;
 ALTER TABLE problems
 modify PROBLEM_CASE null;
 ALTER TABLE subjects
