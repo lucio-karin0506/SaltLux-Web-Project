@@ -127,3 +127,13 @@ alter table students modify student_image null;
 create table login (
     email_id VARCHAR2(100) not null ,
     PASSWORD VARCHAR2(30) not null );
+    
+--점수 기록 테이블(student_grade_list) 컬럼 변경
+alter table student_grade_list drop column subject_score;
+
+alter table student_grade_list add correct_count number(30) not null;
+alter table student_grade_list add solve_count number(30) not null;
+
+    
+    
+    
