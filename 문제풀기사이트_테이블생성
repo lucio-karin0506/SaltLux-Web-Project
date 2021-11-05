@@ -134,6 +134,19 @@ alter table student_grade_list drop column subject_score;
 alter table student_grade_list add correct_count number(30) not null;
 alter table student_grade_list add solve_count number(30) not null;
 
-    
-    
+--students 이미지 저장하는 테이블
+create table student_img(
+    student_id number(30) not null,
+    file_id number(10) not null primary key,
+    category_name varchar2(128) null,
+    file_name varchar2(128) not null,
+    file_size number(10) null,
+    file_content_type varchar2(500) null,
+    file_upload_date timestamp not null,
+    file_data blob null
+);
+
+ALTER TABLE students
+    ADD CONSTRAINT student_id_fk FOREIGN KEY ( student_id )
+        REFERENCES students ( student_id );
     
