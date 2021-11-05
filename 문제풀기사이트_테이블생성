@@ -150,3 +150,38 @@ ALTER TABLE students
     ADD CONSTRAINT student_id_fk FOREIGN KEY ( student_id )
         REFERENCES students ( student_id );
     
+-- problems 외래키 제약조건 수정
+-- 1. 외래키 제약조건 삭제
+alter table problems drop constraint problems_students_fk;
+
+-- 2. 외래키 제약조건 재설정
+alter table problems add foreign key(student_id) references students(student_id)
+on delete cascade;
+
+-- student_answer_list
+-- 1. 외래키 제약조건 삭제
+alter table student_answer_list drop constraint table_12_problems_fk;
+alter table student_answer_list drop constraint table_12_students_fk;
+
+-- 2. 외래키 제약조건 재설정
+alter table student_answer_list add foreign key(problem_id) references problems(problem_id)
+on delete cascade;
+
+alter table student_answer_list add foreign key(student_id) references students(student_id)
+on delete cascade;
+
+-- student_img
+-- 1. 외래키 제약조건 삭제
+alter table student_img drop constraint student_id_fk;
+
+-- 2. 외래키 제약조건 재설정
+alter table student_img add foreign key(student_id) references students(student_id)
+on delete cascade;
+
+-- student_grade_list
+-- 1. 외래키 제약조건 삭제
+alter table student_grade_list drop constraint table_14_students_fk;
+
+-- 2. 외래키 제약조건 재설정
+alter table student_grade_list add foreign key(student_id) references students(student_id)
+on delete cascade;
